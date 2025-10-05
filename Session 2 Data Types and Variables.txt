@@ -1,0 +1,126 @@
+Session 2: Data Types and Variables in Python
+------------------------------------------------------------
+
+1) What is a Variable?
+   • A variable is a name given to a memory location
+     that stores data.
+   • The value of a variable can change during program execution.
+
+   Example:
+   x = 10
+   name = "Yash"
+   print(x)
+   print(name)
+
+   Output:
+   10
+   Yash
+
+------------------------------------------------------------
+
+2) Rules for Variable Names:
+   • Must start with a letter or underscore (_)
+   • Cannot start with a number
+   • Can contain letters, numbers, and underscores
+   • Case-sensitive (Age and age are different)
+   • Avoid using Python keywords (like if, for, while)
+
+   Example:
+   roll_no = 101
+   RollNo = 102     # Different variable
+   _student = "Ravi"
+
+------------------------------------------------------------
+
+3) What are Data Types?
+   • Data type defines the type of value a variable holds.
+   • Python automatically detects the data type.
+
+------------------------------------------------------------
+4) Basic Data Types in Python:
+
+   a) int     → Integer numbers
+       Example: x = 5
+
+   b) float   → Decimal numbers
+       Example: pi = 3.14
+
+   c) str     → String (text)
+       Example: name = "Yashwant"
+
+   d) bool    → Boolean values (True / False)
+       Example: flag = True
+
+   e) complex → Complex numbers
+       Example: z = 3 + 4j
+
+------------------------------------------------------------
+
+5) Type Casting (Converting one type to another)
+   • int(), float(), str()
+
+   Example:
+   a = 10
+   b = 3.5
+   c = "25"
+
+   print(float(a))   # 10.0
+   print(int(b))     # 3
+   print(int(c))     # 25
+
+------------------------------------------------------------
+
+6) type() Function
+   • Used to check the type of variable.
+
+   Example:
+   x = 10
+   print(type(x))     # <class 'int'>
+
+------------------------------------------------------------
+
+7) Multiple Assignments:
+   • Python allows assigning multiple values in one line.
+
+   Example:
+   a, b, c = 10, 20, 30
+   print(a, b, c)
+
+------------------------------------------------------------
+
+8) Constants in Python:
+   • Python does not have true constants.
+   • By convention, we use uppercase letters for constants.
+
+   Example:
+   PI = 3.14159
+   COMPANY = "TechWorld"
+
+------------------------------------------------------------
+
+9) Deleting Variables:
+   • Use del keyword.
+
+   Example:
+   x = 100
+   del x
+
+------------------------------------------------------------
+10) Practical Examples:
+
+   Example 1:
+   name = "Ravi"
+   age = 21
+   print("Name:", name)
+   print("Age:", age)
+
+   Example 2:
+   x = 5
+   y = 2.5
+   z = x + y
+   print("Result =", z)
+
+------------------------------------------------------------
+End of Session 2
+Next Session → Operators in Python
+------------------------------------------------------------

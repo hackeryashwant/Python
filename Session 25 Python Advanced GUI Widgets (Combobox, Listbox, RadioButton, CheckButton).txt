@@ -1,0 +1,125 @@
+Session 25: Python Advanced GUI Widgets (Combobox, Listbox, RadioButton, CheckButton)
+------------------------------------------------------------
+
+1) Introduction:
+   • Tkinter provides advanced widgets for user interaction.
+   • Common Widgets:
+       - Combobox → dropdown selection
+       - Listbox → display multiple items
+       - RadioButton → select one option
+       - CheckButton → select multiple options
+
+------------------------------------------------------------
+
+2) Importing Modules:
+   from tkinter import *
+   from tkinter import ttk
+
+------------------------------------------------------------
+
+3) Combobox:
+   from tkinter import *
+   from tkinter import ttk
+
+   root = Tk()
+   root.title("Combobox Example")
+
+   options = ["Python", "Java", "C++", "JavaScript"]
+   combo = ttk.Combobox(root, values=options)
+   combo.pack()
+
+   def show_choice():
+       print("Selected:", combo.get())
+
+   Button(root, text="Show Selection", command=show_choice).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+4) Listbox:
+   root = Tk()
+   root.title("Listbox Example")
+
+   listbox = Listbox(root)
+   languages = ["Python", "Java", "C++", "JavaScript"]
+   for lang in languages:
+       listbox.insert(END, lang)
+   listbox.pack()
+
+   def show_selection():
+       selected = listbox.get(listbox.curselection())
+       print("Selected:", selected)
+
+   Button(root, text="Show Selection", command=show_selection).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+5) RadioButton:
+   root = Tk()
+   root.title("RadioButton Example")
+
+   var = IntVar()
+   R1 = Radiobutton(root, text="Option 1", variable=var, value=1)
+   R2 = Radiobutton(root, text="Option 2", variable=var, value=2)
+   R1.pack()
+   R2.pack()
+
+   def show_selection():
+       print("Selected:", var.get())
+
+   Button(root, text="Show Selection", command=show_selection).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+6) CheckButton:
+   root = Tk()
+   root.title("CheckButton Example")
+
+   var1 = IntVar()
+   var2 = IntVar()
+   C1 = Checkbutton(root, text="Python", variable=var1)
+   C2 = Checkbutton(root, text="Java", variable=var2)
+   C1.pack()
+   C2.pack()
+
+   def show_selection():
+       print("Python:", var1.get(), "Java:", var2.get())
+
+   Button(root, text="Show Selection", command=show_selection).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+7) Practical Example (Combobox + RadioButton + CheckButton):
+   root = Tk()
+   root.title("Multiple Widgets Example")
+
+   # Combobox
+   combo = ttk.Combobox(root, values=["Python","Java","C++"])
+   combo.pack()
+
+   # RadioButton
+   var = IntVar()
+   Radiobutton(root, text="Male", variable=var, value=1).pack()
+   Radiobutton(root, text="Female", variable=var, value=2).pack()
+
+   # CheckButton
+   cb1 = IntVar()
+   cb2 = IntVar()
+   Checkbutton(root, text="Subscribe Newsletter", variable=cb1).pack()
+   Checkbutton(root, text="Accept Terms", variable=cb2).pack()
+
+   def show_all():
+       print("Language:", combo.get())
+       print("Gender:", var.get())
+       print("Subscribe:", cb1.get(), "Terms:", cb2.get())
+
+   Button(root, text="Submit", command=show_all).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+End of Session 25
+Next Session → Python Canvas, Scrollbar, Menu, and Message Widgets
+------------------------------------------------------------

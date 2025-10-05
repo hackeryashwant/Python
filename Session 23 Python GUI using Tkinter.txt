@@ -1,0 +1,107 @@
+Session 23: Python GUI using Tkinter
+------------------------------------------------------------
+
+1) Introduction:
+   • Tkinter → Python’s standard library for GUI (Graphical User Interface) applications.
+   • Provides windows, buttons, labels, text boxes, etc.
+   • Cross-platform (works on Windows, Linux, Mac).
+
+------------------------------------------------------------
+
+2) Importing Tkinter:
+   from tkinter import *
+
+------------------------------------------------------------
+
+3) Creating a Simple Window:
+   from tkinter import *
+
+   root = Tk()
+   root.title("My First GUI")
+   root.geometry("300x200")  # width x height
+   root.mainloop()
+
+------------------------------------------------------------
+
+4) Adding Labels:
+   label = Label(root, text="Hello Tkinter", font=("Arial", 14))
+   label.pack()
+
+------------------------------------------------------------
+
+5) Adding Buttons:
+   def greet():
+       print("Button Clicked!")
+
+   button = Button(root, text="Click Me", command=greet)
+   button.pack()
+
+------------------------------------------------------------
+
+6) Adding Entry (Text Box):
+   entry = Entry(root)
+   entry.pack()
+
+   def show_text():
+       print("Entered:", entry.get())
+
+   button = Button(root, text="Show Text", command=show_text)
+   button.pack()
+
+------------------------------------------------------------
+
+7) Adding Text Area:
+   text_area = Text(root, height=5, width=30)
+   text_area.pack()
+
+   def show_textarea():
+       print(text_area.get("1.0", END))  # from line 1, char 0
+   button = Button(root, text="Show TextArea", command=show_textarea)
+   button.pack()
+
+------------------------------------------------------------
+
+8) Using Frames:
+   frame = Frame(root, bg="lightblue", bd=5)
+   frame.pack(padx=10, pady=10)
+   label = Label(frame, text="Inside Frame")
+   label.pack()
+
+------------------------------------------------------------
+
+9) Using Grid Layout:
+   label1 = Label(root, text="Name:")
+   label1.grid(row=0, column=0)
+   entry1 = Entry(root)
+   entry1.grid(row=0, column=1)
+
+------------------------------------------------------------
+
+10) Practical Example (Simple Login GUI):
+   from tkinter import *
+
+   def login():
+       user = entry_user.get()
+       pwd = entry_pwd.get()
+       if user == "admin" and pwd == "123":
+           print("Login Successful")
+       else:
+           print("Invalid Credentials")
+
+   root = Tk()
+   root.title("Login")
+   Label(root, text="Username").grid(row=0, column=0)
+   Label(root, text="Password").grid(row=1, column=0)
+
+   entry_user = Entry(root)
+   entry_user.grid(row=0, column=1)
+   entry_pwd = Entry(root, show="*")
+   entry_pwd.grid(row=1, column=1)
+
+   Button(root, text="Login", command=login).grid(row=2, column=1)
+   root.mainloop()
+
+------------------------------------------------------------
+End of Session 23
+Next Session → Python File Dialog and MessageBox in Tkinter
+------------------------------------------------------------

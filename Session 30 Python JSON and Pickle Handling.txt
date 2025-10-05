@@ -1,0 +1,89 @@
+Session 30: Python JSON and Pickle Handling
+------------------------------------------------------------
+
+1) Introduction:
+   • JSON (JavaScript Object Notation) → data interchange format.
+   • Pickle → Python-specific object serialization.
+   • Use cases: storing and exchanging data.
+
+------------------------------------------------------------
+
+2) Importing Modules:
+   import json
+   import pickle
+
+------------------------------------------------------------
+
+3) JSON Handling:
+
+   a) Convert Python → JSON:
+      data = {"name": "Ravi", "age": 22}
+      json_str = json.dumps(data)
+      print(json_str)
+      
+      Output:
+      {"name": "Ravi", "age": 22}
+
+   b) Convert JSON → Python:
+      python_data = json.loads(json_str)
+      print(python_data)
+      
+      Output:
+      {'name': 'Ravi', 'age': 22}
+
+------------------------------------------------------------
+
+4) Writing JSON to File:
+   data = {"students": [{"name": "Ravi", "age": 22}, {"name": "Neha", "age": 21}]}
+   with open("data.json", "w") as file:
+       json.dump(data, file)
+
+------------------------------------------------------------
+
+5) Reading JSON from File:
+   with open("data.json", "r") as file:
+       data = json.load(file)
+   print(data)
+
+------------------------------------------------------------
+
+6) Pickle Handling:
+
+   a) Serialize Python Object (Write to File):
+      data = {"name": "Ravi", "age": 22}
+      with open("data.pkl", "wb") as file:
+          pickle.dump(data, file)
+
+   b) Deserialize Python Object (Read from File):
+      with open("data.pkl", "rb") as file:
+          data = pickle.load(file)
+      print(data)
+      
+      Output:
+      {'name': 'Ravi', 'age': 22}
+
+------------------------------------------------------------
+
+7) Practical Example (JSON + Pickle):
+
+   # JSON Example
+   data = {"employees": [{"name": "Ravi", "dept": "IT"}, {"name": "Neha", "dept": "HR"}]}
+   with open("employees.json", "w") as f:
+       json.dump(data, f)
+
+   with open("employees.json", "r") as f:
+       data = json.load(f)
+       print(data)
+
+   # Pickle Example
+   with open("employees.pkl", "wb") as f:
+       pickle.dump(data, f)
+
+   with open("employees.pkl", "rb") as f:
+       new_data = pickle.load(f)
+       print(new_data)
+
+------------------------------------------------------------
+End of Session 30
+Next Session → Python Logging, Debugging, and Exception Handling (Advanced)
+------------------------------------------------------------

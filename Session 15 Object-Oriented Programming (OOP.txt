@@ -1,0 +1,204 @@
+Session 15: Object-Oriented Programming (OOP
+
+------------------------------------------------------------
+
+1) Introduction:
+   • OOP allows organizing code using **classes** and **objects**.
+   • Key Concepts:
+       1) Class
+       2) Object
+       3) Inheritance
+       4) Encapsulation
+       5) Polymorphism
+       6) Abstraction
+
+------------------------------------------------------------
+
+2) Class and Object:
+   • Class → blueprint of an object.
+   • Object → instance of a class.
+
+   Example:
+   class Student:
+       def __init__(self, name, age):
+           self.name = name
+           self.age = age
+       def display(self):
+           print("Name:", self.name)
+           print("Age:", self.age)
+
+   s1 = Student("Yash", 26)
+   s1.display()
+
+   Output:
+   Name: Yash
+   Age: 26
+
+------------------------------------------------------------
+
+3) __init__ Method (Constructor):
+   • Called automatically when object is created.
+   • Used to initialize attributes.
+
+   Example:
+   class Person:
+       def __init__(self, name):
+           self.name = name
+       def greet(self):
+           print("Hello", self.name)
+
+   p1 = Person("Ravi")
+   p1.greet()
+
+   Output:
+   Hello Ravi
+
+------------------------------------------------------------
+
+4) Instance Variables and Methods:
+   • Variables defined in constructor → instance variables
+   • Methods inside class → instance methods
+
+   Example:
+   class Car:
+       def __init__(self, brand):
+           self.brand = brand
+       def show(self):
+           print("Car Brand:", self.brand)
+
+   c1 = Car("Honda")
+   c1.show()
+
+   Output:
+   Car Brand: Honda
+
+------------------------------------------------------------
+
+5) Class Variables:
+   • Shared across all objects.
+
+   Example:
+   class Car:
+       wheels = 4  # class variable
+       def __init__(self, brand):
+           self.brand = brand
+
+   c1 = Car("Honda")
+   c2 = Car("Toyota")
+   print(c1.brand, c1.wheels)
+   print(c2.brand, c2.wheels)
+
+   Output:
+   Honda 4
+   Toyota 4
+
+------------------------------------------------------------
+
+6) Inheritance:
+   • Allows one class to inherit properties of another.
+   • Types: Single, Multiple, Multilevel
+
+   Example (Single Inheritance):
+   class Parent:
+       def greet(self):
+           print("Hello from Parent")
+
+   class Child(Parent):
+       def show(self):
+           print("Hello from Child")
+
+   c = Child()
+   c.greet()
+   c.show()
+
+   Output:
+   Hello from Parent
+   Hello from Child
+
+------------------------------------------------------------
+
+7) Method Overriding:
+   • Child class can override parent method.
+
+   Example:
+   class Parent:
+       def greet(self):
+           print("Parent Greeting")
+   class Child(Parent):
+       def greet(self):
+           print("Child Greeting")
+
+   c = Child()
+   c.greet()
+
+   Output:
+   Child Greeting
+
+------------------------------------------------------------
+
+8) Encapsulation:
+   • Restrict access to class members using:
+       _single underscore → protected
+       __double underscore → private
+
+   Example:
+   class Person:
+       def __init__(self, name):
+           self.__name = name  # private
+       def show(self):
+           print("Name:", self.__name)
+
+   p = Person("Yash")
+   p.show()
+
+------------------------------------------------------------
+
+9) Polymorphism:
+   • Same interface, different implementation.
+   • Example: method overriding or operator overloading.
+
+   Example:
+   def add(a, b):
+       return a + b
+   print(add(5, 3))
+   print(add("Hello ", "Python"))
+
+   Output:
+   8
+   Hello Python
+
+------------------------------------------------------------
+
+10) Practical Example (Bank Account):
+   class BankAccount:
+       def __init__(self, name, balance=0):
+           self.name = name
+           self.balance = balance
+       def deposit(self, amount):
+           self.balance += amount
+           print("Deposited:", amount)
+       def withdraw(self, amount):
+           if amount <= self.balance:
+               self.balance -= amount
+               print("Withdrawn:", amount)
+           else:
+               print("Insufficient Balance")
+       def show(self):
+           print("Account Holder:", self.name)
+           print("Balance:", self.balance)
+
+   acc = BankAccount("Ravi", 1000)
+   acc.deposit(500)
+   acc.withdraw(300)
+   acc.show()
+
+   Output:
+   Deposited: 500
+   Withdrawn: 300
+   Account Holder: Ravi
+   Balance: 1200
+
+------------------------------------------------------------
+End of Session 15
+Next Session → Python Modules and Packages
+------------------------------------------------------------

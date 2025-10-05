@@ -1,0 +1,96 @@
+Session 31: Python Logging, Debugging, and Exception Handling (Advanced)
+------------------------------------------------------------
+
+1) Introduction:
+   • Logging → record program events (info, warning, error).
+   • Debugging → identify and fix errors.
+   • Exception Handling → manage runtime errors.
+
+------------------------------------------------------------
+
+2) Logging Module:
+   import logging
+
+   logging.basicConfig(level=logging.DEBUG, 
+                       format='%(asctime)s - %(levelname)s - %(message)s')
+
+   logging.debug("Debug message")
+   logging.info("Info message")
+   logging.warning("Warning message")
+   logging.error("Error message")
+   logging.critical("Critical message")
+
+   Output example:
+   2025-10-05 15:00:00,123 - DEBUG - Debug message
+
+------------------------------------------------------------
+
+3) Try-Except:
+   try:
+       x = int(input("Enter number: "))
+       y = 10 / x
+   except ZeroDivisionError:
+       print("Cannot divide by zero")
+   except ValueError:
+       print("Invalid input")
+   else:
+       print("Result:", y)
+   finally:
+       print("Execution Completed")
+
+------------------------------------------------------------
+
+4) Raising Custom Exceptions:
+   class MyError(Exception):
+       pass
+
+   def check_value(x):
+       if x < 0:
+           raise MyError("Negative value not allowed")
+       else:
+           print("Value is", x)
+
+   try:
+       check_value(-5)
+   except MyError as e:
+       print("Error:", e)
+
+------------------------------------------------------------
+
+5) Debugging with pdb:
+   import pdb
+
+   x = 10
+   y = 0
+   pdb.set_trace()   # set breakpoint
+   result = x / y
+   print(result)
+
+------------------------------------------------------------
+
+6) Logging + Exception Handling Example:
+   import logging
+
+   logging.basicConfig(level=logging.INFO)
+
+   def divide(a, b):
+       try:
+           return a / b
+       except ZeroDivisionError:
+           logging.error("Division by zero attempted")
+           return None
+
+   print(divide(10, 2))
+   print(divide(10, 0))
+
+------------------------------------------------------------
+
+7) Practical Use:
+   • Logging important in large projects instead of print().
+   • Try-except prevents program crash.
+   • pdb allows step-by-step debugging.
+
+------------------------------------------------------------
+End of Session 31
+Next Session → Python Web Scraping (BeautifulSoup & Requests)
+------------------------------------------------------------

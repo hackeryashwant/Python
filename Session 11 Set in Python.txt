@@ -1,0 +1,130 @@
+Session 11: Set in Python
+------------------------------------------------------------
+
+1) Introduction:
+   • A set is an unordered collection of unique items.
+   • Sets do **not allow duplicates** and are **mutable**.
+   • Sets are written using curly braces { } or set() function.
+
+------------------------------------------------------------
+
+2) Creating a Set:
+   fruits = {"apple", "banana", "cherry"}
+   print(fruits)
+
+   Output (order may vary):
+   {'banana', 'apple', 'cherry'}
+
+------------------------------------------------------------
+
+3) Set with Different Data Types:
+   myset = {1, "Hello", 3.5, True}
+   print(myset)
+
+   Output:
+   {1, 3.5, True, 'Hello'}
+
+------------------------------------------------------------
+
+4) Accessing Elements:
+   • Sets are unordered → indexing not allowed.
+   • Use loop to access elements.
+
+   Example:
+   fruits = {"apple", "banana", "cherry"}
+   for f in fruits:
+       print(f)
+
+   Output (order may vary):
+   apple
+   banana
+   cherry
+
+------------------------------------------------------------
+
+5) Adding Elements:
+   • add() → adds single element
+   • update() → adds multiple elements
+
+   Example:
+   fruits = {"apple", "banana"}
+   fruits.add("cherry")
+   fruits.update(["orange", "mango"])
+   print(fruits)
+
+   Output (order may vary):
+   {'banana', 'mango', 'cherry', 'apple', 'orange'}
+
+------------------------------------------------------------
+
+6) Removing Elements:
+   • remove() → removes element (error if not present)
+   • discard() → removes element (no error if not present)
+   • pop() → removes arbitrary element
+   • clear() → removes all elements
+
+   Example:
+   fruits = {"apple", "banana", "cherry"}
+   fruits.remove("banana")
+   fruits.discard("orange")
+   print(fruits)
+
+   Output (order may vary):
+   {'apple', 'cherry'}
+
+------------------------------------------------------------
+
+7) Set Operations:
+   a) Union ( | ):
+      A = {1,2,3}
+      B = {3,4,5}
+      print(A | B)   # {1,2,3,4,5}
+
+   b) Intersection ( & ):
+      print(A & B)   # {3}
+
+   c) Difference ( - ):
+      print(A - B)   # {1,2}
+
+   d) Symmetric Difference ( ^ ):
+      print(A ^ B)   # {1,2,4,5}
+
+------------------------------------------------------------
+
+8) Membership Operators:
+   fruits = {"apple", "banana", "cherry"}
+   print("apple" in fruits)      # True
+   print("mango" not in fruits)  # True
+
+------------------------------------------------------------
+
+9) Set Methods Summary:
+   • add(), update(), remove(), discard(), pop(), clear()
+   • union(), intersection(), difference(), symmetric_difference()
+   • isdisjoint(), issubset(), issuperset()
+
+------------------------------------------------------------
+
+10) Practical Example (Unique Numbers):
+   nums = [1, 2, 3, 2, 1, 4, 5]
+   unique_nums = set(nums)
+   print(unique_nums)
+
+   Output:
+   {1, 2, 3, 4, 5}
+
+------------------------------------------------------------
+
+11) Converting List to Set and Back:
+   lst = [10, 20, 10, 30]
+   s = set(lst)
+   lst2 = list(s)
+   print(lst2)
+
+   Output (order may vary):
+   [10, 20, 30]
+
+------------------------------------------------------------
+End of Session 11
+Next Session → Dictionary in Python (Key-Value Pairs)
+------------------------------------------------------------

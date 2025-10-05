@@ -1,0 +1,198 @@
+Session 7: Functions in Python
+------------------------------------------------------------
+
+1) Introduction:
+   • A function is a block of reusable code.
+   • It performs a specific task and helps to reduce repetition.
+   • Functions make code modular and easy to maintain.
+
+------------------------------------------------------------
+
+2) Types of Functions:
+   1) Built-in Functions  → print(), len(), type(), input(), etc.
+   2) User-defined Functions → Created by the programmer.
+
+------------------------------------------------------------
+
+3) Syntax of Function:
+   def function_name(parameters):
+       statement(s)
+       return value
+
+------------------------------------------------------------
+
+4) Simple Function Example:
+   def greet():
+       print("Hello, welcome to Python!")
+
+   greet()
+
+   Output:
+   Hello, welcome to Python!
+
+------------------------------------------------------------
+
+5) Function with Parameters:
+   def add(a, b):
+       print("Sum =", a + b)
+
+   add(10, 20)
+
+   Output:
+   Sum = 30
+
+------------------------------------------------------------
+
+6) Function with Return Value:
+   def multiply(a, b):
+       result = a * b
+       return result
+
+   ans = multiply(4, 5)
+   print("Result =", ans)
+
+   Output:
+   Result = 20
+
+------------------------------------------------------------
+
+7) Function with Default Parameter:
+   def show(name="Guest"):
+       print("Hello", name)
+
+   show()
+   show("Yash")
+
+   Output:
+   Hello Guest
+   Hello Yash
+
+------------------------------------------------------------
+
+8) Function with Multiple Return Values:
+   def calc(a, b):
+       return a + b, a - b, a * b
+
+   add, sub, mul = calc(10, 5)
+   print("Add =", add)
+   print("Sub =", sub)
+   print("Mul =", mul)
+
+   Output:
+   Add = 15
+   Sub = 5
+   Mul = 50
+
+------------------------------------------------------------
+
+9) Keyword Arguments:
+   def student(name, age):
+       print("Name:", name)
+       print("Age:", age)
+
+   student(age=18, name="Ravi")
+
+   Output:
+   Name: Ravi
+   Age: 18
+
+------------------------------------------------------------
+
+10) Variable-length Arguments:
+   • *args → for multiple positional arguments
+   • **kwargs → for multiple keyword arguments
+
+   Example 1 (*args):
+   def total(*nums):
+       print("Sum =", sum(nums))
+
+   total(10, 20, 30)
+   total(5, 15)
+
+   Output:
+   Sum = 60
+   Sum = 20
+
+------------------------------------------------------------
+
+Example 2 (**kwargs):
+   def details(**data):
+       for key, value in data.items():
+           print(key, ":", value)
+
+   details(name="Yash", city="Mumbai", age=26)
+
+   Output:
+   name : Yash
+   city : Mumbai
+   age : 26
+
+------------------------------------------------------------
+
+11) Nested Function (Function inside Function):
+   def outer():
+       print("Outer function")
+
+       def inner():
+           print("Inner function")
+
+       inner()
+
+   outer()
+
+   Output:
+   Outer function
+   Inner function
+
+------------------------------------------------------------
+
+12) Lambda Function (Anonymous Function):
+   • One-line function using the keyword `lambda`.
+
+   Syntax:
+   lambda arguments : expression
+
+   Example:
+   square = lambda x: x * x
+   print(square(5))
+
+   Output:
+   25
+
+------------------------------------------------------------
+
+13) Recursion:
+   • A function that calls itself.
+
+   Example (Factorial):
+   def fact(n):
+       if n == 1:
+           return 1
+       else:
+           return n * fact(n - 1)
+
+   print("Factorial =", fact(5))
+
+   Output:
+   Factorial = 120
+
+------------------------------------------------------------
+
+14) Practical Example (Even or Odd Function):
+   def check(num):
+       if num % 2 == 0:
+           return "Even"
+       else:
+           return "Odd"
+
+   print(check(8))
+   print(check(11))
+
+   Output:
+   Even
+   Odd
+
+------------------------------------------------------------
+End of Session 7
+Next Session → String in Python (Creation, Methods, Operations)
+------------------------------------------------------------

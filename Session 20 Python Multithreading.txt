@@ -1,0 +1,128 @@
+Session 20: Python Multithreading
+------------------------------------------------------------
+
+1) Introduction:
+   • Multithreading → running multiple threads (tasks) at the same time.
+   • Useful for I/O operations and parallel execution.
+   • Python module: `threading`
+
+------------------------------------------------------------
+
+2) Importing Threading Module:
+   import threading
+
+------------------------------------------------------------
+
+3) Creating a Thread (Using Function):
+   import threading
+
+   def print_numbers():
+       for i in range(1, 6):
+           print(i)
+
+   t1 = threading.Thread(target=print_numbers)
+   t1.start()
+   t1.join()   # wait for thread to complete
+
+   Output:
+   1
+   2
+   3
+   4
+   5
+
+------------------------------------------------------------
+
+4) Creating a Thread (Using Class):
+   import threading
+
+   class MyThread(threading.Thread):
+       def run(self):
+           for i in range(5):
+               print("Thread Running:", i)
+
+   t = MyThread()
+   t.start()
+   t.join()
+
+------------------------------------------------------------
+
+5) Thread with Arguments:
+   import threading
+
+   def greet(name):
+       print("Hello", name)
+
+   t = threading.Thread(target=greet, args=("Yash",))
+   t.start()
+   t.join()
+
+   Output:
+   Hello Yash
+
+------------------------------------------------------------
+
+6) Daemon Thread:
+   • Daemon thread stops when main program ends.
+   Example:
+   import threading, time
+
+   def background_task():
+       while True:
+           print("Running in background")
+           time.sleep(2)
+
+   t = threading.Thread(target=background_task)
+   t.daemon = True
+   t.start()
+   print("Main Program Ends")
+
+------------------------------------------------------------
+
+7) Thread Synchronization (Lock):
+   • Used to prevent race conditions.
+   Example:
+   import threading
+
+   lock = threading.Lock()
+   shared_counter = 0
+
+   def increment():
+       global shared_counter
+       for i in range(1000):
+           lock.acquire()
+           shared_counter += 1
+           lock.release()
+
+   t1 = threading.Thread(target=increment)
+   t2 = threading.Thread(target=increment)
+   t1.start()
+   t2.start()
+   t1.join()
+   t2.join()
+   print("Counter:", shared_counter)
+
+------------------------------------------------------------
+
+8) Practical Example (Multiple Threads):
+   import threading
+
+   def print_even():
+       for i in range(0, 10, 2):
+           print("Even:", i)
+
+   def print_odd():
+       for i in range(1, 10, 2):
+           print("Odd:", i)
+
+   t1 = threading.Thread(target=print_even)
+   t2 = threading.Thread(target=print_odd)
+   t1.start()
+   t2.start()
+   t1.join()
+   t2.join()
+
+------------------------------------------------------------
+End of Session 20
+Next Session → Python Socket Programming (Client-Server)
+------------------------------------------------------------

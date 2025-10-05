@@ -1,0 +1,208 @@
+Session 5: Loops in Python
+------------------------------------------------------------
+
+1) Introduction:
+   • Loop means repeating a block of code multiple times.
+   • Python provides two main types of loops:
+       1) for loop
+       2) while loop
+
+------------------------------------------------------------
+
+2) for Loop:
+   • Used to iterate over a sequence (list, string, range, etc.)
+   • Syntax:
+       for variable in sequence:
+           statement(s)
+
+   Example 1:
+   for i in range(5):
+       print(i)
+
+   Output:
+   0
+   1
+   2
+   3
+   4
+
+------------------------------------------------------------
+
+Example 2:
+   for x in [10, 20, 30]:
+       print("Value:", x)
+
+   Output:
+   Value: 10
+   Value: 20
+   Value: 30
+
+------------------------------------------------------------
+
+Example 3 (String Loop):
+   for ch in "PYTHON":
+       print(ch)
+
+   Output:
+   P
+   Y
+   T
+   H
+   O
+   N
+
+------------------------------------------------------------
+
+3) range() Function:
+   • Used to generate a sequence of numbers.
+   • Syntax:
+       range(start, stop, step)
+
+   Example:
+   for i in range(1, 10, 2):
+       print(i)
+
+   Output:
+   1
+   3
+   5
+   7
+   9
+
+------------------------------------------------------------
+
+4) while Loop:
+   • Executes a block of code as long as a condition is True.
+
+   Syntax:
+       while condition:
+           statement(s)
+
+   Example 1:
+   i = 1
+   while i <= 5:
+       print("Hello")
+       i = i + 1
+
+   Output:
+   Hello
+   Hello
+   Hello
+   Hello
+   Hello
+
+------------------------------------------------------------
+
+Example 2:
+   n = 5
+   while n > 0:
+       print(n)
+       n -= 1
+   print("Loop Finished")
+
+   Output:
+   5
+   4
+   3
+   2
+   1
+   Loop Finished
+
+------------------------------------------------------------
+
+5) Infinite Loop:
+   • Loop that never ends unless stopped manually.
+
+   Example:
+   while True:
+       print("Running...")
+
+   (Use Ctrl + C to stop)
+
+------------------------------------------------------------
+
+6) Nested Loops:
+   • Loop inside another loop.
+
+   Example:
+   for i in range(1, 4):
+       for j in range(1, 4):
+           print(i, j)
+
+   Output:
+   1 1
+   1 2
+   1 3
+   2 1
+   2 2
+   2 3
+   3 1
+   3 2
+   3 3
+
+------------------------------------------------------------
+
+7) break Statement:
+   • Used to exit the loop immediately.
+
+   Example:
+   for i in range(1, 10):
+       if i == 5:
+           break
+       print(i)
+
+   Output:
+   1
+   2
+   3
+   4
+
+------------------------------------------------------------
+
+8) continue Statement:
+   • Skips the current iteration and continues the loop.
+
+   Example:
+   for i in range(1, 6):
+       if i == 3:
+           continue
+       print(i)
+
+   Output:
+   1
+   2
+   4
+   5
+
+------------------------------------------------------------
+
+9) else with Loop:
+   • The else block runs when the loop completes normally.
+
+   Example:
+   for i in range(3):
+       print(i)
+   else:
+       print("Loop completed")
+
+   Output:
+   0
+   1
+   2
+   Loop completed
+
+------------------------------------------------------------
+
+10) Practical Example (Sum of Numbers):
+   total = 0
+   for i in range(1, 6):
+       total += i
+   print("Sum =", total)
+
+   Output:
+   Sum = 15
+
+------------------------------------------------------------
+End of Session 5
+Next Session → Control Statements (break, continue, pass, return)
+------------------------------------------------------------

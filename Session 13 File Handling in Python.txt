@@ -1,0 +1,109 @@
+Session 13: File Handling in Python
+------------------------------------------------------------
+
+1) Introduction:
+   • File handling allows Python to read and write files.
+   • Common file modes:
+       r → read (default)
+       w → write (creates new file or overwrite)
+       a → append (adds at end)
+       r+ → read and write
+
+------------------------------------------------------------
+
+2) Opening a File:
+   Syntax:
+   file = open("filename.txt", "mode")
+
+   Example:
+   file = open("sample.txt", "w")
+   file.write("Hello Python File Handling\n")
+   file.close()
+
+------------------------------------------------------------
+
+3) Reading a File:
+   Modes: r, r+
+   
+   Example:
+   file = open("sample.txt", "r")
+   content = file.read()
+   print(content)
+   file.close()
+
+   Output:
+   Hello Python File Handling
+
+------------------------------------------------------------
+
+4) Reading Line by Line:
+   file = open("sample.txt", "r")
+   print(file.readline())   # reads first line
+   print(file.readlines())  # reads all lines into list
+   file.close()
+
+------------------------------------------------------------
+
+5) Appending to a File:
+   file = open("sample.txt", "a")
+   file.write("Welcome to Python\n")
+   file.close()
+
+------------------------------------------------------------
+
+6) Using 'with' Statement (Recommended):
+   • Automatically closes file after block ends.
+
+   Example:
+   with open("sample.txt", "r") as f:
+       data = f.read()
+       print(data)
+
+------------------------------------------------------------
+
+7) Writing Multiple Lines:
+   lines = ["Python\n", "Java\n", "C++\n"]
+   with open("languages.txt", "w") as f:
+       f.writelines(lines)
+
+------------------------------------------------------------
+
+8) Checking File Modes Summary:
+   Mode | Description
+   -------------------------
+   r    | Read file (file must exist)
+   w    | Write file (overwrite if exists)
+   a    | Append to file (create if not exist)
+   r+   | Read and write
+
+------------------------------------------------------------
+
+9) File Operations:
+   • os module can be used for:
+       import os
+       os.remove("file.txt")       → delete file
+       os.rename("old.txt", "new.txt")  → rename file
+
+------------------------------------------------------------
+
+10) Practical Example (Count Lines):
+   with open("sample.txt", "r") as f:
+       count = 0
+       for line in f:
+           count += 1
+   print("Total Lines =", count)
+
+   Output (example):
+   Total Lines = 2
+
+------------------------------------------------------------
+
+11) Reading Large Files (Loop):
+   with open("sample.txt", "r") as f:
+       for line in f:
+           print(line.strip())
+
+------------------------------------------------------------
+End of Session 13
+Next Session → Exception Handling in Python (try, except, finally, raise)
+------------------------------------------------------------

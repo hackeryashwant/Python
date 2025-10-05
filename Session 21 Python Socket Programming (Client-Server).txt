@@ -1,0 +1,98 @@
+Session 21: Python Socket Programming (Client-Server)
+------------------------------------------------------------
+
+1) Introduction:
+   • Socket programming allows communication between two computers (client-server) over a network.
+   • Python module: `socket`
+   • Basic terms:
+       Server → waits for connections
+       Client → initiates connection
+       Socket → endpoint of communication
+
+------------------------------------------------------------
+
+2) Importing Socket Module:
+   import socket
+
+------------------------------------------------------------
+
+3) Creating a Server:
+   import socket
+
+   server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   server.bind(("127.0.0.1", 12345))  # IP & Port
+   server.listen(1)  # max 1 connection
+   print("Server waiting for connection...")
+
+   conn, addr = server.accept()
+   print("Connected by", addr)
+   conn.send(b"Hello Client")  # send bytes
+   conn.close()
+
+------------------------------------------------------------
+
+4) Creating a Client:
+   import socket
+
+   client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   client.connect(("127.0.0.1", 12345))
+   data = client.recv(1024)  # receive bytes
+   print("Received from server:", data.decode())
+   client.close()
+
+   Output:
+   Received from server: Hello Client
+
+------------------------------------------------------------
+
+5) Sending and Receiving Messages:
+   Server Side:
+   conn.send("Message from Server".encode())
+
+   Client Side:
+   msg = client.recv(1024).decode()
+   print(msg)
+
+------------------------------------------------------------
+
+6) Closing Socket:
+   • Always close socket after communication.
+   server.close()
+   client.close()
+
+------------------------------------------------------------
+
+7) Practical Example (Simple Echo Server):
+   Server:
+   import socket
+
+   server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   server.bind(("127.0.0.1", 12345))
+   server.listen(1)
+   print("Server is running...")
+
+   conn, addr = server.accept()
+   while True:
+       data = conn.recv(1024).decode()
+       if not data:
+           break
+       print("Client:", data)
+       conn.send(data.upper().encode())
+   conn.close()
+
+   Client:
+   import socket
+
+   client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   client.connect(("127.0.0.1", 12345))
+   client.send("hello server".encode())
+   print(client.recv(1024).decode())
+   client.close()
+
+   Output:
+   Client: HELLO SERVER
+
+------------------------------------------------------------
+End of Session 21
+Next Session → Python Database Connectivity (MySQL using mysql-connector)
+------------------------------------------------------------

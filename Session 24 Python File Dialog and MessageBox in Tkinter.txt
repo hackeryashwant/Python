@@ -1,0 +1,81 @@
+Session 24: Python File Dialog and MessageBox in Tkinter
+------------------------------------------------------------
+
+1) Introduction:
+   • Tkinter provides built-in dialogs for file selection and messages.
+   • Modules:
+       filedialog → open/save file dialog
+       messagebox → show info, warning, error messages
+
+------------------------------------------------------------
+
+2) Importing Modules:
+   from tkinter import *
+   from tkinter import filedialog, messagebox
+
+------------------------------------------------------------
+
+3) File Open Dialog:
+   def open_file():
+       filename = filedialog.askopenfilename(title="Select a File")
+       print("Selected File:", filename)
+
+   root = Tk()
+   Button(root, text="Open File", command=open_file).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+4) File Save Dialog:
+   def save_file():
+       filename = filedialog.asksaveasfilename(title="Save File As")
+       print("Save File As:", filename)
+
+   root = Tk()
+   Button(root, text="Save File", command=save_file).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+5) MessageBox Examples:
+   • Show Info:
+       messagebox.showinfo("Info", "This is an information message")
+   • Show Warning:
+       messagebox.showwarning("Warning", "This is a warning message")
+   • Show Error:
+       messagebox.showerror("Error", "This is an error message")
+   • Ask Yes/No:
+       response = messagebox.askyesno("Confirm", "Do you want to continue?")
+       print(response)  # True/False
+
+------------------------------------------------------------
+
+6) Practical Example (Open File + Info Box):
+   from tkinter import *
+   from tkinter import filedialog, messagebox
+
+   def open_file():
+       filename = filedialog.askopenfilename(title="Select a File")
+       if filename:
+           messagebox.showinfo("Selected File", filename)
+
+   root = Tk()
+   Button(root, text="Open File", command=open_file).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+7) Practical Example (Save File + Warning Box):
+   def save_file():
+       filename = filedialog.asksaveasfilename(title="Save File As")
+       if filename:
+           messagebox.showwarning("Save File", "File will be saved as:\n" + filename)
+
+   root = Tk()
+   Button(root, text="Save File", command=save_file).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+End of Session 24
+Next Session → Python Advanced GUI Widgets (Combobox, Listbox, RadioButton, CheckButton)
+------------------------------------------------------------

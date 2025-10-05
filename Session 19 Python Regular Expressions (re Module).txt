@@ -1,0 +1,129 @@
+Session 19: Python Regular Expressions (re Module)
+------------------------------------------------------------
+
+1) Introduction:
+   • Regular Expression (Regex) → pattern matching for strings.
+   • Python provides **re** module for regex operations.
+   • Common uses: search, match, replace, split, validate data.
+
+------------------------------------------------------------
+
+2) Importing re Module:
+   import re
+
+------------------------------------------------------------
+
+3) re.match():
+   • Checks pattern at the beginning of string.
+   Example:
+   import re
+   result = re.match("Hello", "Hello World")
+   if result:
+       print("Match Found")
+   else:
+       print("No Match")
+
+   Output:
+   Match Found
+
+------------------------------------------------------------
+
+4) re.search():
+   • Searches pattern anywhere in string.
+   Example:
+   import re
+   result = re.search("World", "Hello World")
+   if result:
+       print("Found")
+   else:
+       print("Not Found")
+
+   Output:
+   Found
+
+------------------------------------------------------------
+
+5) re.findall():
+   • Returns all occurrences of pattern in string.
+   Example:
+   import re
+   text = "Python 3, Java 8, C++ 11"
+   numbers = re.findall("\d+", text)
+   print(numbers)
+
+   Output:
+   ['3', '8', '11']
+
+------------------------------------------------------------
+
+6) re.split():
+   • Splits string based on pattern.
+   Example:
+   import re
+   text = "Python,Java,C++"
+   languages = re.split(",", text)
+   print(languages)
+
+   Output:
+   ['Python', 'Java', 'C++']
+
+------------------------------------------------------------
+
+7) re.sub():
+   • Replaces pattern with new string.
+   Example:
+   import re
+   text = "Hello World"
+   new_text = re.sub("World", "Python", text)
+   print(new_text)
+
+   Output:
+   Hello Python
+
+------------------------------------------------------------
+
+8) Special Characters:
+   • \d → digit
+   • \D → non-digit
+   • \w → alphanumeric
+   • \W → non-alphanumeric
+   • \s → whitespace
+   • \S → non-whitespace
+   • .  → any character
+   • ^  → starts with
+   • $  → ends with
+   • *  → zero or more
+   • +  → one or more
+   • ?  → zero or one
+   • {n} → exactly n times
+   • [] → character set
+
+------------------------------------------------------------
+
+9) Practical Example (Validate Email):
+   import re
+   email = "test@example.com"
+   pattern = "^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+   if re.match(pattern, email):
+       print("Valid Email")
+   else:
+       print("Invalid Email")
+
+   Output:
+   Valid Email
+
+------------------------------------------------------------
+
+10) Practical Example (Extract Phone Numbers):
+   import re
+   text = "Call me at 9876543210 or 9123456780"
+   phones = re.findall("\d{10}", text)
+   print(phones)
+
+   Output:
+   ['9876543210', '9123456780']
+
+------------------------------------------------------------
+End of Session 19
+Next Session → Python Multithreading
+------------------------------------------------------------

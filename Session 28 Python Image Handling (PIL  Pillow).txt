@@ -1,0 +1,86 @@
+Session 28: Python Image Handling (PIL / Pillow)
+------------------------------------------------------------
+
+1) Introduction:
+   • PIL (Python Imaging Library) / Pillow is used for image processing.
+   • Tasks: open, display, resize, crop, rotate, save images.
+
+------------------------------------------------------------
+
+2) Installing Pillow:
+   pip install pillow
+
+------------------------------------------------------------
+
+3) Importing Pillow:
+   from PIL import Image
+
+------------------------------------------------------------
+
+4) Opening and Displaying Image:
+   from PIL import Image
+
+   img = Image.open("example.jpg")
+   img.show()
+
+------------------------------------------------------------
+
+5) Getting Image Details:
+   print("Format:", img.format)
+   print("Size:", img.size)
+   print("Mode:", img.mode)
+
+------------------------------------------------------------
+
+6) Resizing Image:
+   resized_img = img.resize((200, 200))
+   resized_img.show()
+
+------------------------------------------------------------
+
+7) Cropping Image:
+   cropped_img = img.crop((50, 50, 200, 200))  # (left, top, right, bottom)
+   cropped_img.show()
+
+------------------------------------------------------------
+
+8) Rotating Image:
+   rotated_img = img.rotate(90)  # rotate 90 degrees
+   rotated_img.show()
+
+------------------------------------------------------------
+
+9) Saving Image:
+   img.save("new_image.jpg")
+
+------------------------------------------------------------
+
+10) Converting Image Mode:
+   gray_img = img.convert("L")  # grayscale
+   gray_img.show()
+
+------------------------------------------------------------
+
+11) Practical Example (Thumbnail Creation):
+   img = Image.open("example.jpg")
+   img.thumbnail((100, 100))
+   img.show()
+   img.save("thumbnail.jpg")
+
+------------------------------------------------------------
+
+12) Practical Example (Batch Resize):
+   import os
+   from PIL import Image
+
+   folder = "images/"
+   for file in os.listdir(folder):
+       if file.endswith(".jpg"):
+           img = Image.open(folder + file)
+           img = img.resize((200, 200))
+           img.save("resized_" + file)
+
+------------------------------------------------------------
+End of Session 28
+Next Session → Python CSV and Excel File Handling
+------------------------------------------------------------

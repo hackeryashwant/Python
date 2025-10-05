@@ -1,0 +1,100 @@
+Session 29: Python CSV and Excel File Handling
+------------------------------------------------------------
+
+1) Introduction:
+   • Python can read/write CSV and Excel files for data handling.
+   • Modules:
+       - CSV → `csv`
+       - Excel → `openpyxl` or `pandas`
+
+------------------------------------------------------------
+
+2) CSV File Handling:
+
+   a) Import Module:
+      import csv
+
+   b) Reading CSV:
+      with open("data.csv", "r") as file:
+          reader = csv.reader(file)
+          for row in reader:
+              print(row)
+
+   c) Writing CSV:
+      with open("data.csv", "w", newline="") as file:
+          writer = csv.writer(file)
+          writer.writerow(["Name", "Age"])
+          writer.writerow(["Ravi", 22])
+          writer.writerow(["Neha", 21])
+
+------------------------------------------------------------
+
+3) Excel File Handling (openpyxl):
+
+   a) Install Module:
+      pip install openpyxl
+
+   b) Import Module:
+      from openpyxl import Workbook, load_workbook
+
+   c) Creating Excel File:
+      wb = Workbook()
+      sheet = wb.active
+      sheet["A1"] = "Name"
+      sheet["B1"] = "Age"
+      sheet.append(["Ravi", 22])
+      sheet.append(["Neha", 21])
+      wb.save("data.xlsx")
+
+------------------------------------------------------------
+
+4) Reading Excel File:
+   wb = load_workbook("data.xlsx")
+   sheet = wb.active
+   for row in sheet.iter_rows(values_only=True):
+       print(row)
+
+   Output:
+   ('Name', 'Age')
+   ('Ravi', 22)
+   ('Neha', 21)
+
+------------------------------------------------------------
+
+5) Practical Example (CSV → Excel):
+   import csv
+   from openpyxl import Workbook
+
+   wb = Workbook()
+   sheet = wb.active
+
+   with open("data.csv", "r") as file:
+       reader = csv.reader(file)
+       for row in reader:
+           sheet.append(row)
+
+   wb.save("data_from_csv.xlsx")
+
+------------------------------------------------------------
+
+6) Using pandas (Alternative for CSV/Excel):
+   import pandas as pd
+
+   # Read CSV
+   df = pd.read_csv("data.csv")
+   print(df)
+
+   # Read Excel
+   df = pd.read_excel("data.xlsx")
+   print(df)
+
+   # Write CSV
+   df.to_csv("new_data.csv", index=False)
+
+   # Write Excel
+   df.to_excel("new_data.xlsx", index=False)
+
+------------------------------------------------------------
+End of Session 29
+Next Session → Python JSON and Pickle Handling
+------------------------------------------------------------

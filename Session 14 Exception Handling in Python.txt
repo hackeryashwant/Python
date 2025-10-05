@@ -1,0 +1,134 @@
+Session 14: Exception Handling in Python
+------------------------------------------------------------
+
+1) Introduction:
+   • Exception is an error that occurs during program execution.
+   • Python provides a way to handle exceptions to avoid program crash.
+   • Keywords used: try, except, finally, raise, else
+
+------------------------------------------------------------
+
+2) Basic try-except:
+   Syntax:
+   try:
+       # code that may raise exception
+   except:
+       # handle exception
+
+   Example:
+   try:
+       x = 10 / 0
+   except:
+       print("Cannot divide by zero")
+
+   Output:
+   Cannot divide by zero
+
+------------------------------------------------------------
+
+3) Handling Specific Exception:
+   try:
+       x = int("abc")
+   except ValueError:
+       print("Invalid number")
+
+   Output:
+   Invalid number
+
+------------------------------------------------------------
+
+4) Multiple Exceptions:
+   try:
+       a = [1,2,3]
+       print(a[5])
+       x = 10 / 0
+   except IndexError:
+       print("Index out of range")
+   except ZeroDivisionError:
+       print("Cannot divide by zero")
+
+   Output:
+   Index out of range
+
+------------------------------------------------------------
+
+5) try-except-else:
+   • else block runs if no exception occurs.
+
+   Example:
+   try:
+       x = 10 / 2
+   except ZeroDivisionError:
+       print("Error")
+   else:
+       print("Result =", x)
+
+   Output:
+   Result = 5.0
+
+------------------------------------------------------------
+
+6) finally Block:
+   • finally block always executes (used for cleanup).
+
+   Example:
+   try:
+       f = open("sample.txt", "r")
+   except FileNotFoundError:
+       print("File not found")
+   finally:
+       print("Execution completed")
+
+   Output (if file missing):
+   File not found
+   Execution completed
+
+------------------------------------------------------------
+
+7) raise Statement:
+   • Used to manually raise an exception.
+
+   Example:
+   x = -5
+   if x < 0:
+       raise ValueError("Negative value not allowed")
+
+   Output:
+   ValueError: Negative value not allowed
+
+------------------------------------------------------------
+
+8) Custom Exception:
+   class MyError(Exception):
+       pass
+
+   try:
+       num = 10
+       if num > 5:
+           raise MyError("Number is greater than 5")
+   except MyError as e:
+       print(e)
+
+   Output:
+   Number is greater than 5
+
+------------------------------------------------------------
+
+9) Practical Example:
+   while True:
+       try:
+           num = int(input("Enter a positive number: "))
+           if num < 0:
+               raise ValueError("Negative number not allowed")
+           break
+       except ValueError as e:
+           print(e)
+
+   Output:
+   Enter a positive number: -5
+   Negative number not allowed
+
+------------------------------------------------------------
+End of Session 14
+Next Session → Object-Oriented Programming (OOP) in Python (Class, Object, Inheritance)
+------------------------------------------------------------

@@ -1,0 +1,106 @@
+Session 18: Python Lambda, Map, Filter, Reduce
+------------------------------------------------------------
+
+1) Introduction:
+   • **Lambda Function** → Anonymous (no name) function defined using `lambda`.
+   • **Map** → Applies a function to all items in an iterable.
+   • **Filter** → Filters items based on a function returning True/False.
+   • **Reduce** → Performs cumulative computation on a list (needs `functools`).
+
+------------------------------------------------------------
+
+2) Lambda Function:
+   Syntax: lambda arguments: expression
+
+   Example:
+   square = lambda x: x * x
+   print(square(5))
+
+   Output:
+   25
+
+------------------------------------------------------------
+
+3) Lambda with Multiple Arguments:
+   add = lambda a, b: a + b
+   print(add(10, 20))
+
+   Output:
+   30
+
+------------------------------------------------------------
+
+4) Map Function:
+   Syntax: map(function, iterable)
+
+   Example:
+   nums = [1, 2, 3, 4, 5]
+   squares = map(lambda x: x*x, nums)
+   print(list(squares))
+
+   Output:
+   [1, 4, 9, 16, 25]
+
+------------------------------------------------------------
+
+5) Filter Function:
+   Syntax: filter(function, iterable)
+
+   Example:
+   nums = [1, 2, 3, 4, 5, 6]
+   even_nums = filter(lambda x: x % 2 == 0, nums)
+   print(list(even_nums))
+
+   Output:
+   [2, 4, 6]
+
+------------------------------------------------------------
+
+6) Reduce Function:
+   • Import from functools: from functools import reduce
+   • Performs cumulative operation on iterable.
+
+   Example:
+   from functools import reduce
+   nums = [1, 2, 3, 4, 5]
+   result = reduce(lambda a, b: a + b, nums)
+   print(result)
+
+   Output:
+   15
+
+------------------------------------------------------------
+
+7) Practical Example (Map + Lambda):
+   names = ["Ravi", "Neha", "Yash"]
+   upper_names = list(map(lambda x: x.upper(), names))
+   print(upper_names)
+
+   Output:
+   ['RAVI', 'NEHA', 'YASH']
+
+------------------------------------------------------------
+
+8) Practical Example (Filter + Lambda):
+   nums = [10, 15, 20, 25, 30]
+   greater_than_20 = list(filter(lambda x: x > 20, nums))
+   print(greater_than_20)
+
+   Output:
+   [25, 30]
+
+------------------------------------------------------------
+
+9) Practical Example (Reduce + Lambda):
+   from functools import reduce
+   nums = [1, 2, 3, 4, 5]
+   product = reduce(lambda a, b: a * b, nums)
+   print(product)
+
+   Output:
+   120
+
+------------------------------------------------------------
+End of Session 18
+Next Session → Python Regular Expressions (re Module)
+------------------------------------------------------------

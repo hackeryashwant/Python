@@ -1,0 +1,109 @@
+
+### **Lecture 3: Operators in Python**  
+#### **Introduction:**  
+Operators in Python are special symbols that perform computations on variables and values. They are the building blocks for manipulating data and performing operations.  
+
+---
+
+#### **1. Arithmetic Operators:**  
+Used to perform mathematical operations like addition, subtraction, multiplication, etc.  
+
+| Operator | Description       | Example                   | Real-World Example |
+|---------|-------------------|----------------------------|---------------------|
+| `+`     | Addition          | `5 + 3` -> `8`              | Total price: `item1 + item2` |
+| `-`     | Subtraction       | `10 - 4` -> `6`             | Remaining balance: `total - spent` |
+| `*`     | Multiplication    | `7 * 3` -> `21`             | Area of a rectangle: `length * width` |
+| `/`     | Division          | `10 / 2` -> `5.0`           | Average score: `total_score / num_students` |
+| `%`     | Modulus           | `9 % 2` -> `1`              | Checking even/odd: `num % 2` |
+| `**`    | Exponentiation    | `2 ** 3` -> `8`             | Compound interest: `principal * (1 + rate) ** time` |
+| `//`    | Floor Division    | `7 // 2` -> `3`             | Distributing items equally: `total_items // num_people` |  
+
+**Code Example:**  
+
+price_per_item = 50
+quantity = 3
+total_price = price_per_item * quantity
+print(f"Total Price: {total_price}")  # Total Price: 150
+
+---
+
+#### **2. Comparison Operators:**  
+Used to compare two values.  
+
+| Operator | Description                  | Example             | Real-World Example |
+|---------|------------------------------|----------------------|---------------------|
+| `==`    | Equal to                     | `5 == 3` -> `False`  | Checking login password |
+| `!=`    | Not equal to                 | `5 != 3` -> `True`   | Checking for mismatched values |
+| `>`     | Greater than                 | `7 > 5` -> `True`    | Checking age eligibility |
+| `<`     | Less than                    | `3 < 5` -> `True`    | Comparing prices |
+| `>=`    | Greater than or equal to      | `7 >= 7` -> `True`   | Minimum purchase requirement |
+| `<=`    | Less than or equal to         | `3 <= 5` -> `True`   | Checking exam score against passing marks |  
+
+**Code Example:**  
+
+age = 20
+print("Eligible for voting" if age >= 18 else "Not eligible")
+# Output: Eligible for voting
+
+---
+
+#### **3. Logical Operators:**  
+Used to combine conditional statements.  
+
+| Operator | Description           | Example                   | Real-World Example |
+|---------|-----------------------|----------------------------|---------------------|
+| `and`   | Both conditions true  | `x > 5 and x > 10`          | Checking age and income eligibility |
+| `or`    | At least one true      | `x > 5 or x < 3`            | Either credit or debit allowed |
+| `not`   | Reverse the result     | `not(x > 5)`                | Checking if the user is not an admin |  
+
+**Code Example:**  
+
+is_student = True
+has_id = True
+if is_student and has_id:
+    print("Access to student portal")
+# Output: Access to student portal
+
+---
+
+#### **4. Assignment Operators:**  
+Used to assign values to variables.  
+
+| Operator | Example          | Equivalent       |
+|---------|------------------|------------------|
+| `=`     | `x = 5`          | Assignment       |
+| `+=`    | `x += 3`         | `x = x + 3`      |
+| `-=`    | `x -= 2`         | `x = x - 2`      |
+| `*=`    | `x *= 4`         | `x = x * 4`      |
+| `/=`    | `x /= 2`         | `x = x / 2`      |
+| `%=`    | `x %= 3`         | `x = x % 3`      |
+| `**=`   | `x **= 2`        | `x = x ** 2`     |
+| `//=`   | `x //= 3`        | `x = x // 3`     |  
+
+**Code Example:**  
+
+salary = 50000
+salary += 5000  # Increment by 5000
+print("Updated Salary:", salary)
+# Output: Updated Salary: 55000
+
+
+---
+
+#### **5. Membership Operators:**  
+Used to test whether a value or variable is in a sequence (like a list, tuple, or string).  
+
+| Operator | Description      | Example                    |
+|---------|------------------|-----------------------------|
+| `in`    | Value present    | `'apple' in ['apple', 'banana']` -> `True` |
+| `not in`| Value not present| `'grape' not in ['apple', 'banana']` -> `True` |  
+
+**Code Example:**  
+
+students = ["Ankit", "Poonam", "kiran"]
+if "poonam" in students:
+    print("Poonam is enrolled")
+# Output: Poonam is enrolled
+
+---
+

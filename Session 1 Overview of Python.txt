@@ -1,0 +1,78 @@
+Session 1: Overview of Python
+---------------------------------------
+
+1) Introduction to Python:
+   • Python is a high-level, interpreted, and general-purpose programming language.
+   • Created by Guido van Rossum in 1991.
+   • It focuses on code readability and simplicity.
+   • Follows the philosophy: “Simple is better than complex.”
+
+2) Features of Python:
+   • Easy to learn and use
+   • Interpreted language (no need to compile)
+   • Dynamically typed (no need to declare data types)
+   • Object-Oriented
+   • Portable and cross-platform
+   • Large standard library
+   • Open-source and free
+   • Extensible and embeddable
+   • Supports GUI and Web development
+
+3) Applications of Python:
+   • Web Development (Django, Flask)
+   • Data Science and Machine Learning (NumPy, Pandas, TensorFlow)
+   • Automation and Scripting
+   • Game Development (Pygame)
+   • Desktop Applications (Tkinter, PyQt)
+   • Networking and IoT
+   • Cybersecurity and Ethical Hacking
+
+4) Python Versions:
+   • Python 1.0 – Released in 1994
+   • Python 2.x – Legacy version
+   • Python 3.x – Modern version (used today)
+
+5) Python Installation:
+   • Download from: https://www.python.org/downloads/
+   • Install and check version using:
+        → python --version
+        → python3 --version
+
+6) Python Execution Methods:
+   a) Interactive Mode (direct command execution)
+   b) Script Mode (save code in .py file and run)
+
+7) First Python Program:
+   Example:
+   -------------------------
+   print("Hello, Python!")
+   -------------------------
+   Output: Hello, Python!
+
+8) Comments in Python:
+   • Single-line comment → #
+   • Multi-line comment → '''   '''
+
+   Example:
+   # This is a single-line comment
+   '''
+   This is
+   a multi-line
+   comment
+   '''
+
+9) Advantages of Python:
+   • Easy syntax and readability
+   • Rapid application development
+   • Large community support
+   • Integration with other languages (C, Java)
+
+10) Disadvantages of Python:
+   • Slower execution speed (interpreted)
+   • Not ideal for mobile apps
+   • High memory consumption
+
+---------------------------------------
+End of Session 1
+Next Session → Data Types and Variables
+---------------------------------------

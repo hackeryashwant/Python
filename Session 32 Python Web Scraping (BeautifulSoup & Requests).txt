@@ -1,0 +1,88 @@
+Session 32: Python Web Scraping (BeautifulSoup & Requests)
+------------------------------------------------------------
+
+1) Introduction:
+   • Web scraping → extracting data from websites.
+   • Modules:
+       - requests → fetch web page
+       - BeautifulSoup → parse HTML content
+
+------------------------------------------------------------
+
+2) Installing Modules:
+   pip install requests
+   pip install beautifulsoup4
+
+------------------------------------------------------------
+
+3) Importing Modules:
+   import requests
+   from bs4 import BeautifulSoup
+
+------------------------------------------------------------
+
+4) Fetching Web Page:
+   url = "https://example.com"
+   response = requests.get(url)
+   print(response.status_code)  # 200 → success
+   print(response.text)         # HTML content
+
+------------------------------------------------------------
+
+5) Parsing HTML:
+   soup = BeautifulSoup(response.text, "html.parser")
+   print(soup.prettify())  # formatted HTML
+
+------------------------------------------------------------
+
+6) Extracting Title:
+   title = soup.title.string
+   print("Page Title:", title)
+
+------------------------------------------------------------
+
+7) Extracting All Links:
+   for link in soup.find_all("a"):
+       print(link.get("href"))
+
+------------------------------------------------------------
+
+8) Extracting Specific Tag Content:
+   paragraphs = soup.find_all("p")
+   for p in paragraphs:
+       print(p.text)
+
+------------------------------------------------------------
+
+9) Practical Example (Scraping News Headlines):
+   url = "https://news.ycombinator.com/"
+   response = requests.get(url)
+   soup = BeautifulSoup(response.text, "html.parser")
+   headlines = soup.find_all("a", class_="storylink")
+   for h in headlines[:5]:
+       print(h.text)
+
+------------------------------------------------------------
+
+10) Handling Errors:
+   try:
+       response = requests.get("https://example.com")
+       response.raise_for_status()  # raise exception for bad response
+   except requests.exceptions.RequestException as e:
+       print("Error fetching page:", e)
+
+------------------------------------------------------------
+
+11) Saving Scraped Data to CSV:
+   import csv
+
+   with open("headlines.csv", "w", newline="", encoding="utf-8") as file:
+       writer = csv.writer(file)
+       writer.writerow(["Headline"])
+       for h in headlines[:5]:
+           writer.writerow([h.text])
+
+------------------------------------------------------------
+End of Session 32
+Next Session → Python Email Handling (smtplib & imaplib)
+------------------------------------------------------------

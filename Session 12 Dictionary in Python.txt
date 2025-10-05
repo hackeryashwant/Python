@@ -1,0 +1,137 @@
+Session 12: Dictionary in Python
+------------------------------------------------------------
+
+1) Introduction:
+   • A dictionary is an unordered collection of key-value pairs.
+   • Keys must be unique, values can be of any data type.
+   • Dictionaries are mutable (can be changed).
+   • Written using curly braces { } with key: value pairs.
+
+------------------------------------------------------------
+
+2) Creating a Dictionary:
+   student = {"name": "Yash", "age": 26, "city": "Mumbai"}
+   print(student)
+
+   Output:
+   {'name': 'Yash', 'age': 26, 'city': 'Mumbai'}
+
+------------------------------------------------------------
+
+3) Accessing Values:
+   • Using key or get() method.
+
+   Example:
+   print(student["name"])       # Yash
+   print(student.get("age"))    # 26
+
+------------------------------------------------------------
+
+4) Adding or Updating Values:
+   • Add new key-value or update existing key.
+
+   Example:
+   student["course"] = "Python"      # add
+   student["age"] = 27               # update
+   print(student)
+
+   Output:
+   {'name': 'Yash', 'age': 27, 'city': 'Mumbai', 'course': 'Python'}
+
+------------------------------------------------------------
+
+5) Removing Items:
+   • pop(key) → removes item by key
+   • popitem() → removes last inserted item
+   • del → delete key or full dictionary
+   • clear() → empties dictionary
+
+   Example:
+   student.pop("city")
+   print(student)
+
+   Output:
+   {'name': 'Yash', 'age': 27, 'course': 'Python'}
+
+------------------------------------------------------------
+
+6) Looping Through Dictionary:
+   student = {"name": "Ravi", "age": 22, "city": "Pune"}
+
+   • Loop keys:
+       for k in student:
+           print(k)
+
+   • Loop values:
+       for v in student.values():
+           print(v)
+
+   • Loop key-value pairs:
+       for k, v in student.items():
+           print(k, ":", v)
+
+------------------------------------------------------------
+
+7) Dictionary Methods Summary:
+   • keys() → returns all keys
+   • values() → returns all values
+   • items() → returns all key-value pairs
+   • get(key) → returns value for key
+   • update() → updates dictionary with another dict
+
+------------------------------------------------------------
+
+8) Nested Dictionary:
+   students = {
+       "s1": {"name": "Ravi", "age": 22},
+       "s2": {"name": "Neha", "age": 21}
+   }
+   print(students["s1"]["name"])
+
+   Output:
+   Ravi
+
+------------------------------------------------------------
+
+9) Checking Membership:
+   student = {"name": "Yash", "age": 26}
+   print("name" in student)       # True
+   print("city" not in student)   # True
+
+------------------------------------------------------------
+
+10) Practical Example:
+   marks = {"Math": 90, "Science": 85, "English": 88}
+   total = 0
+   for subject, score in marks.items():
+       total += score
+   print("Total Marks =", total)
+
+   Output:
+   Total Marks = 263
+
+------------------------------------------------------------
+
+11) Copying Dictionary:
+   dict1 = {"a": 1, "b": 2}
+   dict2 = dict1.copy()
+   print(dict2)
+
+   Output:
+   {'a': 1, 'b': 2}
+
+------------------------------------------------------------
+
+12) Merging Dictionaries:
+   dict1 = {"a": 1, "b": 2}
+   dict2 = {"c": 3, "d": 4}
+   dict1.update(dict2)
+   print(dict1)
+
+   Output:
+   {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+------------------------------------------------------------
+End of Session 12
+Next Session → File Handling in Python (Read, Write, Append)
+------------------------------------------------------------

@@ -1,0 +1,105 @@
+Session 22: Python Database Connectivity (MySQL using mysql-connector)
+------------------------------------------------------------
+
+1) Introduction:
+   • Python can interact with MySQL databases using **mysql-connector** module.
+   • Allows performing SQL queries (CRUD operations) from Python.
+
+------------------------------------------------------------
+
+2) Installing mysql-connector:
+   pip install mysql-connector-python
+
+------------------------------------------------------------
+
+3) Importing mysql-connector:
+   import mysql.connector
+
+------------------------------------------------------------
+
+4) Connecting to MySQL Database:
+   import mysql.connector
+
+   conn = mysql.connector.connect(
+       host="localhost",
+       user="root",
+       password="yourpassword",
+       database="testdb"
+   )
+   cursor = conn.cursor()
+   print("Connection Successful")
+
+------------------------------------------------------------
+
+5) Creating a Table:
+   sql = """
+   CREATE TABLE IF NOT EXISTS students (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       name VARCHAR(50),
+       age INT
+   )
+   """
+   cursor.execute(sql)
+   conn.commit()
+
+------------------------------------------------------------
+
+6) Inserting Data:
+   sql = "INSERT INTO students (name, age) VALUES (%s, %s)"
+   val = ("Ravi", 22)
+   cursor.execute(sql, val)
+   conn.commit()
+   print(cursor.rowcount, "record inserted.")
+
+------------------------------------------------------------
+
+7) Fetching Data:
+   cursor.execute("SELECT * FROM students")
+   result = cursor.fetchall()
+   for row in result:
+       print(row)
+
+   Output (example):
+   (1, 'Ravi', 22)
+   (2, 'Neha', 21)
+
+------------------------------------------------------------
+
+8) Updating Data:
+   sql = "UPDATE students SET age = %s WHERE name = %s"
+   val = (23, "Ravi")
+   cursor.execute(sql, val)
+   conn.commit()
+   print(cursor.rowcount, "record(s) updated.")
+
+------------------------------------------------------------
+
+9) Deleting Data:
+   sql = "DELETE FROM students WHERE name = %s"
+   val = ("Neha",)
+   cursor.execute(sql, val)
+   conn.commit()
+   print(cursor.rowcount, "record(s) deleted.")
+
+------------------------------------------------------------
+
+10) Closing Connection:
+   cursor.close()
+   conn.close()
+
+------------------------------------------------------------
+
+11) Practical Example (Insert and Fetch Multiple Records):
+   students = [("Yash", 26), ("Neha", 24), ("Ravi", 23)]
+   sql = "INSERT INTO students (name, age) VALUES (%s, %s)"
+   cursor.executemany(sql, students)
+   conn.commit()
+
+   cursor.execute("SELECT * FROM students")
+   for row in cursor.fetchall():
+       print(row)
+
+------------------------------------------------------------
+End of Session 22
+Next Session → Python GUI using Tkinter
+------------------------------------------------------------

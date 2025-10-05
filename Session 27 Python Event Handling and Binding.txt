@@ -1,0 +1,109 @@
+Session 27: Python Event Handling and Binding
+------------------------------------------------------------
+
+1) Introduction:
+   • Event handling allows GUI widgets to respond to user actions.
+   • Common events: click, key press, mouse movement.
+   • Tkinter provides `bind()` method to attach events to functions.
+
+------------------------------------------------------------
+
+2) Basic Event Binding:
+   from tkinter import *
+
+   def on_click(event):
+       print("Mouse clicked at", event.x, event.y)
+
+   root = Tk()
+   root.title("Event Binding Example")
+
+   root.bind("<Button-1>", on_click)  # Left mouse click
+   root.mainloop()
+
+------------------------------------------------------------
+
+3) Key Press Event:
+   def key_pressed(event):
+       print("Key pressed:", event.char)
+
+   root = Tk()
+   root.bind("<Key>", key_pressed)
+   root.mainloop()
+
+------------------------------------------------------------
+
+4) Mouse Motion Event:
+   def mouse_move(event):
+       print("Mouse at:", event.x, event.y)
+
+   root = Tk()
+   root.bind("<Motion>", mouse_move)
+   root.mainloop()
+
+------------------------------------------------------------
+
+5) Button Widget with Command:
+   from tkinter import *
+
+   def greet():
+       print("Hello User!")
+
+   root = Tk()
+   Button(root, text="Click Me", command=greet).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+
+6) Advanced Binding Example:
+   from tkinter import *
+
+   def left_click(event):
+       print("Left Click at:", event.x, event.y)
+
+   def right_click(event):
+       print("Right Click at:", event.x, event.y)
+
+   root = Tk()
+   root.bind("<Button-1>", left_click)
+   root.bind("<Button-3>", right_click)
+   root.mainloop()
+
+------------------------------------------------------------
+
+7) Entry Widget Event:
+   def on_enter(event):
+       print("You pressed Enter in Entry:", entry.get())
+
+   root = Tk()
+   entry = Entry(root)
+   entry.pack()
+   entry.bind("<Return>", on_enter)  # Enter key pressed
+   root.mainloop()
+
+------------------------------------------------------------
+
+8) Practical Example (Mouse + Keyboard + Button):
+   from tkinter import *
+
+   def click_event(event):
+       print("Mouse clicked at:", event.x, event.y)
+
+   def key_event(event):
+       print("Key pressed:", event.char)
+
+   def button_click():
+       print("Button clicked!")
+
+   root = Tk()
+   root.title("Event Handling Example")
+
+   root.bind("<Button-1>", click_event)
+   root.bind("<Key>", key_event)
+
+   Button(root, text="Click Me", command=button_click).pack()
+   root.mainloop()
+
+------------------------------------------------------------
+End of Session 27
+Next Session → Python Image Handling (PIL / Pillow)
+------------------------------------------------------------
